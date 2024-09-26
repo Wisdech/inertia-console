@@ -1,4 +1,11 @@
 .search-table {
+
+    @apply w-full max-w-full overflow-x-auto overflow-y-hidden;
+
+    &-toolbar {
+        @apply -mt-2 mb-4 flex min-w-[70rem] items-center justify-between;
+    }
+
     &-form {
         @apply pr-5 pl-1;
 
