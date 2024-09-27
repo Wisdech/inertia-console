@@ -4,12 +4,15 @@ import { router } from '@inertiajs/react';
 import { getQs, setQs } from '@wisdech/tsutils';
 import { clsx } from 'clsx';
 import React, { useState } from 'react';
-import { FieldRender } from './FieldRender';
+import { FormRender } from '../Schema/Render';
+import { Schema, SearchTableProps } from '../utils/types';
 import SimpleTable from './SimpleTable';
 import styles from './styles.module.css';
-import { SearchTableProps } from './types';
-import { renderColumns } from './helper';
-import { ColumnsControl } from './ColumnsControl';
+import { TableControl } from './TableControl';
+
+function renderColumns(columns: Schema[], visible: (string | undefined)[]) {
+  return columns.filter((c) => visible.includes(c.dataIndex) || !c.dataIndex);
+}
 
 function SearchForm<T = any>({ columns, formProps }: SearchTableProps<T>) {
   const [form] = Form.useForm<T>();
@@ -51,7 +54,7 @@ function SearchForm<T = any>({ columns, formProps }: SearchTableProps<T>) {
           {columns?.map((column) => (
             <Grid.Col key={column.dataIndex} span={8}>
               <Form.Item label={column.title} field={column.dataIndex}>
-                <FieldRender {...column} />
+                <FormRender {...column} />
               </Form.Item>
             </Grid.Col>
           ))}
@@ -82,7 +85,7 @@ export function SearchTable({ columns, actions, toolbar, ...props }: SearchTable
         <Space>{actions}</Space>
         <Space>
           {toolbar}
-          <ColumnsControl columns={tableColumns} value={visible} onChange={setVisible} />
+          <TableControl columns={tableColumns} value={visible} onChange={setVisible} />
         </Space>
       </div>
       <SimpleTable borderCell {...props} columns={renderColumns(tableColumns, visible)} />

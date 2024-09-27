@@ -1,9 +1,9 @@
 import './main.css';
 
+export * from './Layout/ColSection';
+export * from './Schema/Render';
 export * from './SearchTable/SearchTable';
 export * from './SearchTable/SimpleTable';
-export * from './SearchTable/FieldRender';
-export * from './Layout/ColSection';
+export * from './SimpleForm/NormalForm';
 
-export * from './SearchTable/types';
 export * from './utils/types';

@@ -1,12 +1,11 @@
-import { FormFieldProps } from '../utils/types';
-import { SearchColumnsProps } from './types';
 import { Button, Card, Checkbox } from '@arco-design/web-react';
 import { IconSettings } from '@arco-design/web-react/icon';
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import React from 'react';
+import { FormFieldProps, Schema } from '../utils/types';
 
-export function ColumnsControl({ columns, value, onChange }: FormFieldProps & { columns: SearchColumnsProps[] }) {
-  const options = (columns as SearchColumnsProps[])
+export function TableControl({ columns, value, onChange }: FormFieldProps & { columns: Schema[] }) {
+  const options = (columns as Schema[])
     .filter((column) => column.dataIndex)
     .map((column) => ({
       label: `${column.title}`,
