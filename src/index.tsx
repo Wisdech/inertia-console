@@ -6,4 +6,7 @@ export * from './SearchTable/SearchTable';
 export * from './SearchTable/SimpleTable';
 export * from './SimpleForm/NormalForm';
 
+export * from './Hooks/useFormErrors';
+export * from './Hooks/useFormInstance';
+
 export * from './utils/types';

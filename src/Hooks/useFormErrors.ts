@@ -1,7 +1,7 @@
 import { usePage } from '@inertiajs/react';
 import { FormErrors } from '../utils/types';
 
-export default function useFormErrors(...fields: string[]): FormErrors {
+export function useFormErrors(...fields: string[]): FormErrors {
   const { errors } = usePage().props;
 
   const formErrors: FormErrors = {};
