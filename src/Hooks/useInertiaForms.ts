@@ -1,5 +1,12 @@
+import { Form } from '@arco-design/web-react';
 import { usePage } from '@inertiajs/react';
-import { FormErrors } from '../utils/types';
+import { FormErrors, NormalFormProps } from '../utils/types';
+
+export function useFormInstance() {
+  const [form] = Form.useForm() as unknown as [NormalFormProps['form']];
+
+  return form;
+}
 
 export function useFormErrors(...fields: string[]): FormErrors {
   const { errors } = usePage().props;

@@ -1,6 +1,6 @@
 import { Button, Form } from '@arco-design/web-react';
 import React from 'react';
-import { useFormErrors } from '../Hooks/useFormErrors';
+import { useFormErrors } from '../Hooks/useInertiaForms';
 import { FormRender } from '../Schema/Render';
 import { FormErrors, NormalFormProps } from '../utils/types';
 
