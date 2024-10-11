@@ -2,7 +2,7 @@ import { DatePicker, Input, Select } from '@arco-design/web-react';
 import React from 'react';
 import { FormFieldProps, Schema } from '../utils/types';
 
-export function FormRender({ value, onChange, fieldProps, ...props }: FormFieldProps<Schema>) {
+export function FormRender<T>({ value, onChange, fieldProps, ...props }: FormFieldProps<Schema<T>>) {
   switch (props.valueType) {
     case 'date':
       return (

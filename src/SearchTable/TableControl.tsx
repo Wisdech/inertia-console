@@ -4,8 +4,8 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import React from 'react';
 import { FormFieldProps, Schema } from '../utils/types';
 
-export function TableControl({ columns, value, onChange }: FormFieldProps & { columns: Schema[] }) {
-  const options = (columns as Schema[])
+export function TableControl<T>({ columns, value, onChange }: FormFieldProps & { columns: Schema<T>[] }) {
+  const options = (columns as Schema<T>[])
     .filter((column) => column.dataIndex)
     .map((column) => ({
       label: `${column.title}`,

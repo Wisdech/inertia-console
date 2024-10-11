@@ -4,7 +4,7 @@ import { useFormErrors } from '../Hooks/useInertiaForms';
 import { FormRender } from '../Schema/Render';
 import { FormErrors, NormalFormProps } from '../utils/types';
 
-export function NormalForm({ columns = [], submit = '提交', footer, children, ...props }: NormalFormProps) {
+export function NormalForm<T = any>({ columns = [], submit = '提交', footer, children, ...props }: NormalFormProps<T>) {
   const errors = useFormErrors(...columns?.filter((c) => !!c.dataIndex).map((c) => c.dataIndex!)) as FormErrors;
 
   return (
@@ -18,7 +18,7 @@ export function NormalForm({ columns = [], submit = '提交', footer, children, 
             field={column.dataIndex}
             {...errors[`${column.dataIndex}`]}
           >
-            <FormRender {...column} />
+            <FormRender<T> {...column} />
           </Form.Item>
         ))}
       {children}

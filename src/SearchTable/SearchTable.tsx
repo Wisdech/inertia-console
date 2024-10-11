@@ -10,7 +10,7 @@ import SimpleTable from './SimpleTable';
 import styles from './styles.module.css';
 import { TableControl } from './TableControl';
 
-function renderColumns(columns: Schema[], visible: (string | undefined)[]) {
+function renderColumns<T>(columns: Schema<T>[], visible: (string | undefined)[]) {
   return columns.filter((c) => visible.includes(c.dataIndex) || !c.dataIndex);
 }
 
@@ -72,7 +72,7 @@ function SearchForm<T = any>({ columns, formProps }: SearchTableProps<T>) {
   );
 }
 
-export function SearchTable({ columns, actions, toolbar, ...props }: SearchTableProps) {
+export function SearchTable<T>({ columns, actions, toolbar, ...props }: SearchTableProps<T>) {
   const tableColumns = columns.filter((c) => !c.hideInTable);
   const searchColumns = columns.filter((c) => !c.hideInSearch);
 
@@ -85,10 +85,10 @@ export function SearchTable({ columns, actions, toolbar, ...props }: SearchTable
         <Space>{actions}</Space>
         <Space>
           {toolbar}
-          <TableControl columns={tableColumns} value={visible} onChange={setVisible} />
+          <TableControl<T> columns={tableColumns} value={visible} onChange={setVisible} />
         </Space>
       </div>
-      <SimpleTable borderCell {...props} columns={renderColumns(tableColumns, visible)} />
+      <SimpleTable<T> borderCell {...props} columns={renderColumns(tableColumns, visible)} />
     </Space>
   );
 }
