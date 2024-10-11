@@ -1,6 +1,7 @@
 import './main.css';
 
 export * from './Layout/ColSection';
+export * from './Misc/Icon';
 export * from './Misc/Logo';
 export * from './Misc/NavLink';
 export * from './Schema/Render';
