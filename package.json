@@ -11,8 +11,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
+    "start": "tsdx watch --format esm",
+    "build": "tsdx build --format esm",
     "prepare": "tsdx build"
   },
   "peerDependencies": {
@@ -21,7 +21,6 @@
   "name": "@wisdech/inertia-console",
   "author": "Beijing Wisdech Technology Co., Ltd.",
   "module": "dist/inertia-console.esm.js",
-  "type": "commonjs",
   "devDependencies": {
     "@svgr/rollup": "^8.1.0",
     "@types/react": "^18.3.8",
