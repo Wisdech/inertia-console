@@ -4,6 +4,8 @@ export * from './Layout/ColSection';
 export * from './Misc/Icon';
 export * from './Misc/Logo';
 export * from './Misc/NavLink';
+export * from './Page/AuthLayout';
+export * from './Page/ConsoleLayout';
 export * from './Schema/Render';
 export * from './SearchTable/SearchTable';
 export * from './SearchTable/SimpleTable';

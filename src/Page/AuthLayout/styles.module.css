@@ -1,0 +1,17 @@
+.layout {
+    @apply relative isolate flex;
+    @apply bg-zinc-100 font-sans;
+    @apply w-full;
+}
+
+.content {
+    @apply h-full w-full flex pb-24;
+    @apply md:bg-transparent bg-white;
+}
+
+.container {
+    @apply flex flex-col;
+    @apply max-w-md max-h-[640px] w-full h-fit;
+    @apply bg-white m-auto p-6;
+    @apply lg:rounded-lg lg:p-10 lg:shadow-xl lg:ring-1 lg:ring-zinc-950/5;
+}

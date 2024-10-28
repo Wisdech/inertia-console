@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "0.3.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -11,9 +11,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "start": "tsdx watch --format esm",
-    "build": "tsdx build --format esm",
-    "prepare": "tsdx build --format esm"
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "prepare": "tsdx build"
   },
   "peerDependencies": {
     "react": ">=18"
@@ -40,8 +40,9 @@
   },
   "dependencies": {
     "@arco-design/web-react": "^2.64.0",
-    "@inertiajs/react": "^1.2.0",
     "@headlessui/react": "^2.1.8",
+    "@heroicons/react": "^2.1.5",
+    "@inertiajs/react": "^1.2.0",
     "@wisdech/tsutils": "^1.0.1",
     "clsx": "^2.1.1"
   }

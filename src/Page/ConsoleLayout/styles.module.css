@@ -1,0 +1,117 @@
+.layout {
+    @apply relative isolate flex w-full bg-white max-lg:flex-col lg:bg-zinc-100;
+
+    /* Override */
+    :global(.arco-layout-sider),
+    :global(.arco-layout-sider-light) {
+        background: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.site-logo {
+    @apply h-8 w-8 rounded-lg;
+}
+
+.site-name {
+    @apply ml-2 text-lg font-semibold;
+}
+
+.sider {
+    @apply fixed h-full inset-y-0 left-0 max-lg:hidden !important;
+    /* Override */
+    @apply w-56 shadow-none !important;
+
+    :global(.arco-menu) {
+        /* Override */
+        @apply bg-transparent !important;
+    }
+
+    :global(.arco-menu-item),
+    :global(.arco-menu-disabled),
+    :global(.arco-menu-inline-header),
+    :global(.arco-menu-inline-header .arco-menu-selected) {
+        @apply relative;
+        background: unset !important;
+    }
+
+    &-team {
+        @apply mx-5 px-3 py-0.5 mt-4 rounded-lg hover:bg-zinc-950/5 h-10;
+    }
+
+    &-header {
+        @apply flex items-center mt-5 mx-3 px-3 py-1 rounded-lg hover:bg-zinc-950/5;
+    }
+
+    &-footer {
+        @apply rounded-t-none border-t border-zinc-950/5;
+        @apply w-56 fixed bottom-2;
+
+        :global(.trigger) {
+            @apply mx-3 my-2 flex items-center rounded-lg px-2 py-2 hover:bg-zinc-950/5;
+        }
+    }
+
+    &-menu {
+        :global(.active) {
+            @apply absolute inset-y-2 -left-0 w-0.5 rounded-full;
+            background: rgb(var(--primary-6));
+        }
+
+        :global(.menu-item-title) {
+            @apply relative rounded-lg px-4 !important;
+            @apply hover:bg-zinc-950/5;
+        }
+
+        :global(.arco-menu-selected) {
+            color: rgb(var(--primary-6)) !important;
+            background: unset !important;
+        }
+
+        :global(.arco-menu-inline-header),
+        :global(.arco-menu-inline-header .arco-menu-selected) {
+            @apply mx-3 relative rounded-lg !important;
+            @apply hover:bg-zinc-950/5 !important;
+        }
+
+    }
+}
+
+.content {
+    @apply flex flex-1 flex-col;
+    @apply lg:min-w-0 lg:pl-56 lg:pr-2 lg:pt-2;
+}
+
+.container {
+    @apply grow px-6;
+    @apply lg:bg-white lg:ring-zinc-950/5;
+    @apply lg:rounded-lg lg:px-8 lg:py-4 lg:shadow-sm lg:ring-1;
+}
+
+.action {
+    @apply mb-1 min-w-80 rounded-lg pt-1 shadow-xl lg:min-w-64;
+    @apply outline outline-1 outline-zinc-400/50;
+}
+
+.mobile {
+    &-nav {
+        @apply lg:hidden flex items-center justify-between;
+        @apply w-full px-4;
+    }
+
+    &-panel {
+        @apply inset-y-0 fixed w-full max-w-80 p-2 transition;
+
+        &-content {
+            @apply flex h-full flex-col rounded-lg bg-white shadow-sm;
+        }
+
+        :global(.arco-menu-item),
+        :global(.arco-menu-disabled),
+        :global(.arco-menu-inline-header),
+        :global(.arco-menu-inline-header .arco-menu-selected) {
+            @apply relative;
+            background: unset !important;
+        }
+    }
+}
